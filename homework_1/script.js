@@ -14,6 +14,12 @@ for (let i = 1; i <= 100; i++) {
 // 2
 
 function factorialCalculator(number) {
+
+  if (number < 0) {
+    console.log("This number is negative. :(");
+    return;
+  }
+
   let result = 1;
   for (let i = number; i > 1; i--) {
     result *= i;
@@ -22,6 +28,7 @@ function factorialCalculator(number) {
 }
 
 factorialCalculator(3);
+
 
 // 3
 
