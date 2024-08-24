@@ -38,6 +38,7 @@ function easyCalculator(num1, num2, operator) {
 }
 
 //task 3
+
 checkPassword("3435456345");
 
 function checkPassword(password) {
@@ -56,3 +57,22 @@ function checkPassword(password) {
     console.log("Password is strong");
   }
 }
+
+//task 4
+
+function longestWordInString(string) {
+  if (!string) {
+    return "String is empty!";
+  }
+  const words = string.replace(/[^\w\s]/g, "").split(" "); // remove punctuation marks
+  let longestWord = "";
+
+  for (let word of words) {
+    if (word.length > longestWord.length) {
+      longestWord = word;
+    }
+  }
+  return longestWord;
+}
+let word = longestWordInString("Hello world! my name is Merab Samkharadze");
+console.log(word);
