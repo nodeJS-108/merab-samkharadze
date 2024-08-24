@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/nodeJS-108/merab-samkharadze/issues"
   },
-  "homepage": "https://github.com/nodeJS-108/merab-samkharadze#readme"
+  "homepage": "https://github.com/nodeJS-108/merab-samkharadze#readme",
+  "dependencies": {
+    "prompt-sync": "^4.2.0"
+  }
 }
