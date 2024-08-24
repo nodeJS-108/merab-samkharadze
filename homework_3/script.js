@@ -36,3 +36,23 @@ function easyCalculator(num1, num2, operator) {
     console.log("Operator is unvalid!");
   }
 }
+
+//task 3
+checkPassword("3435456345");
+
+function checkPassword(password) {
+  let lengthOfPassword = password.length;
+
+  if (
+    lengthOfPassword < 3 ||
+    (!isNaN(password) && Number(password).toString() === password)
+  ) {
+    console.log("Password is unsuitable");
+  } else if (3 <= lengthOfPassword && lengthOfPassword <= 6) {
+    console.log("Password is weak");
+  } else if (6 < lengthOfPassword && lengthOfPassword <= 8) {
+    console.log("Password is acceptable");
+  } else if (8 < lengthOfPassword && lengthOfPassword <= 16) {
+    console.log("Password is strong");
+  }
+}
