@@ -4,7 +4,7 @@ function longestWordInString(string) {
   if (!string) {
     return "String is empty!";
   }
-  const words = string.replace(/[^\w\s]/g, "").split(" ");
+  const words = string.replace(/[^\w\s]/g, "").split(" "); // remove punctuation marks
   let longestWord = "";
 
   for (let word of words) {
