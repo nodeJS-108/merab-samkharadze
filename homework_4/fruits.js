@@ -33,4 +33,18 @@ function deleteFruit(fruitToDelete) {
   }
 }
 
-module.exports = { getFruits, addFruit, deleteFruit };
+function updateFruit(oldFruit, newFruit) {
+  const data = fs.readFileSync("fruits.json");
+  const fruitsData = JSON.parse(data);
+
+  const index = fruitsData.fruits.indexOf(oldFruit);
+  if (index !== -1) {
+    fruitsData.fruits[index] = newFruit;
+    fs.writeFileSync("fruits.json", JSON.stringify(fruitsData, null, 2));
+    return `${oldFruit} ჩანაცვლდა ახალი ხილით, კერძოდ ${newFruit}თ. 👍`;
+  } else {
+    return `${oldFruit} ხილის სიაში ვერ მოიძებნა. ☹️`;
+  }
+}
+
+module.exports = { getFruits, addFruit, deleteFruit, updateFruit };
