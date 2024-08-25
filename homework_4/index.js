@@ -1,5 +1,5 @@
 const prompt = require("prompt-sync")();
-const { getFruits, addFruit } = require("./fruits");
+const { getFruits, addFruit, deleteFruit } = require("./fruits");
 
 console.log("1. არჩეული ხილების ჩამონათვალი");
 console.log("2. ახალი ხილის დამატება");

@@ -15,7 +15,7 @@ function addFruit(newFruit) {
     fs.writeFileSync("fruits.json", JSON.stringify(fruitsData, null, 2));
     return `${newFruit} დაემატა წარმატებით! 👍`;
   } else {
-    return `ხილის დამატება ვერ მოხერხდა! ☹️!`;
+    return `ხილის დამატება ვერ მოხერხდა! ☹️`;
   }
 }
 
@@ -27,9 +27,9 @@ function deleteFruit(fruitToDelete) {
   if (index !== -1) {
     fruitsData.fruits.splice(index, 1);
     fs.writeFileSync("fruits.json", JSON.stringify(fruitsData, null, 2));
-    return `${fruitToDelete} has been removed from the list.`;
+    return `${fruitToDelete} წაიშალა წარმატებით! 👍`;
   } else {
-    return `${fruitToDelete} not found in the list.`;
+    return `${fruitToDelete} ხილის სიაში ვერ მოიძებნა! ☹️`;
   }
 }
 
