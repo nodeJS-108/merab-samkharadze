@@ -13,10 +13,24 @@ function addFruit(newFruit) {
   if (newFruit && !fruitsData.fruits.includes(newFruit)) {
     fruitsData.fruits.push(newFruit);
     fs.writeFileSync("fruits.json", JSON.stringify(fruitsData, null, 2));
-    return `${newFruit} has been added to the list.`;
+    return `${newFruit} დაემატა წარმატებით! 👍`;
   } else {
-    return `Fruit already exists or invalid input.`;
+    return `ხილის დამატება ვერ მოხერხდა! ☹️!`;
   }
 }
 
-module.exports = { getFruits, addFruit };
+function deleteFruit(fruitToDelete) {
+  const data = fs.readFileSync("fruits.json");
+  const fruitsData = JSON.parse(data);
+
+  const index = fruitsData.fruits.indexOf(fruitToDelete);
+  if (index !== -1) {
+    fruitsData.fruits.splice(index, 1);
+    fs.writeFileSync("fruits.json", JSON.stringify(fruitsData, null, 2));
+    return `${fruitToDelete} has been removed from the list.`;
+  } else {
+    return `${fruitToDelete} not found in the list.`;
+  }
+}
+
+module.exports = { getFruits, addFruit, deleteFruit };
